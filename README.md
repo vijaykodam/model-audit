@@ -69,10 +69,10 @@ BSD and GNU `stat`.
 Claude Code sessions active in the last 7 day(s)
 
 LAST ACTIVE        PROJECT                                SESSION                               MODELS (responses)
-2026-07-03 09:47   -Users-vg-experiments-vg-site-vijay    85f5d9a6-ec9f-4dc2-...                claude-fable-5(24)
-2026-07-02 11:18   -Users-vg-experiments-linkedin-scrape  4a347153-4458-47f8-...                claude-fable-5(278)
-2026-07-02 07:53   -Users-vg-experiments-linkedin-scrape  1a89419d/agent-ab3a2f9e5caae8685      claude-opus-4-8(21)
-2026-06-30 18:06   -Users-vg-experiments-vg-site-vijay    a4b9c607-b1e8-4c92-...                claude-opus-4-8(128)
+2026-07-03 09:47   -vijay-projects-project3    85f5d9a6-ec9f-4dc2-...                claude-fable-5(24)
+2026-07-02 11:18   -vijay-projects-project1    4a347153-4458-47f8-...                claude-fable-5(278)
+2026-07-02 07:53   -vijay-projects-projecy1    1a89419d/agent-ab3a2f9e5caae8685      claude-opus-4-8(21)
+2026-06-30 18:06   -vijay-projects-project3    a4b9c607-b1e8-4c92-...                claude-opus-4-8(128)
 
 Totals across all sessions:
      598  claude-fable-5
