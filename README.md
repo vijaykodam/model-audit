@@ -1,6 +1,6 @@
 # model-audit
 
-A Claude Code skill (and standalone script) that audits which Claude model
+A Claude Code skill — installable as a plugin — that audits which Claude model
 handled your sessions — e.g. to confirm your coding requests ran on Fable 5
 and were not served by a different model (Opus 4.8, a fallback, etc.).
 
@@ -9,24 +9,54 @@ It reads the session transcript JSONL files Claude Code writes under
 field with the exact model ID that produced it — a per-message, ground-truth
 audit trail.
 
-## Install as a Claude Code personal skill
+## Install
 
-```bash
-git clone https://github.com/vijaykodam/model-audit.git ~/experiments/model-audit
-ln -s ~/experiments/model-audit ~/.claude/skills/model-audit
+### As a plugin via the vijaykodam marketplace (recommended)
+
+```
+/plugin marketplace add vijaykodam/claude-plugins
+/plugin install model-audit@vijaykodam
 ```
 
-New Claude Code sessions will then load the skill whenever you ask things
-like "what models did I use for project X?" or "was this session downgraded
-from Fable 5?". The symlink keeps the installed skill in sync with the repo.
+Or from your shell, outside a session:
+
+```bash
+claude plugin marketplace add vijaykodam/claude-plugins
+claude plugin install model-audit@vijaykodam
+```
+
+Run `/reload-plugins` (or restart Claude Code) to activate. The skill is then
+available as the `/model-audit:model-audit` slash command and is also invoked
+automatically when you ask things like "what models did I use for project X?"
+or "was this session downgraded from Fable 5?".
+
+### As a plugin directly from this repo
+
+This repo doubles as its own single-plugin marketplace:
+
+```
+/plugin marketplace add vijaykodam/model-audit
+/plugin install model-audit@model-audit
+```
+
+### As a personal skill (clone + symlink)
+
+```bash
+git clone https://github.com/vijaykodam/model-audit.git
+ln -s "$(pwd)/model-audit/skills/model-audit" ~/.claude/skills/model-audit
+```
+
+This variant registers the skill without the plugin namespace, so the slash
+command is the shorter `/model-audit`. The symlink keeps the installed skill
+in sync with the repo.
 
 ## Use the script directly (no skill needed)
 
 ```bash
-./list-session-models.sh          # last 7 days (default)
-./list-session-models.sh 30       # last 30 days (any number works)
-./list-session-models.sh all      # all time (no date filter)
-CLAUDE_PROJECTS_DIR=~/.claude/projects/-Users-vg-myproject ./list-session-models.sh  # one project
+skills/model-audit/list-session-models.sh          # last 7 days (default)
+skills/model-audit/list-session-models.sh 30       # last 30 days (any number works)
+skills/model-audit/list-session-models.sh all      # all time (no date filter)
+CLAUDE_PROJECTS_DIR=~/.claude/projects/-Users-vg-myproject skills/model-audit/list-session-models.sh  # one project
 ```
 
 Any other argument prints usage and exits nonzero. No dependencies beyond

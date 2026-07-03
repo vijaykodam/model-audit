@@ -1,0 +1,9 @@
+{
+  "name": "model-audit",
+  "description": "Audit which Claude model handled each Claude Code session, from transcript ground truth",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vijay Kodam",
+    "url": "https://vijay.eu"
+  }
+}

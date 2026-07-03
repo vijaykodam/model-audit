@@ -1,0 +1,19 @@
+{
+  "name": "model-audit",
+  "owner": {
+    "name": "Vijay Kodam",
+    "url": "https://vijay.eu"
+  },
+  "metadata": {
+    "description": "Per-session model usage audit for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "model-audit",
+      "source": "./",
+      "description": "Audit which Claude model handled each Claude Code session",
+      "category": "development",
+      "keywords": ["models", "audit", "sessions", "transcripts"]
+    }
+  ]
+}
