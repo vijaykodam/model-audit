@@ -56,7 +56,7 @@ in sync with the repo.
 skills/model-audit/list-session-models.sh          # last 7 days (default)
 skills/model-audit/list-session-models.sh 30       # last 30 days (any number works)
 skills/model-audit/list-session-models.sh all      # all time (no date filter)
-CLAUDE_PROJECTS_DIR=~/.claude/projects/-Users-vg-myproject skills/model-audit/list-session-models.sh  # one project
+CLAUDE_PROJECTS_DIR=~/.claude/projects/myproject skills/model-audit/list-session-models.sh  # one project
 ```
 
 Any other argument prints usage and exits nonzero. No dependencies beyond
